@@ -13,6 +13,7 @@ export async function POST(req: NextRequest){
                external_reference: testeId,
                metadata: {
                    testeId, // essa variavel é convertida em snake_case no webhook (teste_id)
+                   userEmail
                },
                ...(userEmail && { payer: { email: userEmail }}),
                items: [
